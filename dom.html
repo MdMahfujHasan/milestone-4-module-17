@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM</title>
+    <style>
+        article{
+            border: 2px solid green;
+            border-radius: 20px;
+            margin: 5px;
+            padding: 20px;
+        }
+    </style>
+</head>
+<body>
+    <main>
+        <!-- <section>
+            <h3 id="first">exploring DOM</h3>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ratione, libero!</p>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+        </section> -->
+        <article class="special">
+            <h3>article-1</h3>
+            <p class="author">author-1</p>
+            <p class="description">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Eos ut veniam aspernatur vel voluptates ratione eum dicta, quidem nemo sed rerum atque molestias sequi dignissimos nulla blanditiis tempora nobis obcaecati.</p>
+        </article>
+        <article>
+            <h3>article-2</h3>
+            <p class="author">author-2</p>
+            <p class="description">Obcaecati veritatis rerum totam, aliquam quam iusto ut cum voluptatibus nobis dolore sit, harum mollitia, vitae ducimus quidem tempore placeat dolor perspiciatis ullam? Culpa pariatur neque consequuntur, sequi blanditiis hic.</p>
+        </article>
+        <article>
+            <h3>article-3</h3>
+            <p class="author">author-3</p>
+            <p class="description">Adipisci placeat ad tempora, natus ex, ipsum, est laborum vero reiciendis iure nostrum libero voluptatem magni repellendus deleniti non aliquid fugiat nam aspernatur. Quo laborum illum consequuntur ut quas! Ad.</p>
+        </article>
+    </main>
+    <script>
+        // DOM (Document Object Model)
+        var user ={ name: 'mahfuj', phone: 01818485069};
+        console.log(document.body);
+        console.log(user);
+        var first = document.getElementById('first');
+        first.style.color = 'red';
+        first.style.backgroundColor = 'yellow';
+        first.style.fontSize = 25px;
+
+        var author = document.getElementsByClassName('author');
+        console.log(author);
+        for (i = 0; i < author.length; i++){
+            var element = author[i];
+            console.log(element.innerHTML);
+            element.innerHTML = 'lekhok-' + (i+1);
+            console.log(element);
+            element.style.color = 'red';
+            element.style.margin = '10px';
+
+        var author = document.querySelectorAll('.special h3');
+
+        for (i = 0; i < author.length; i++){
+            var element = author[i];
+            console.log(element.innerHTML);
+            element.innerHTML = 'lekhok-' + (i+1);
+            element.setAttribute('title', 'all author is same');
+            console.log(element);
+            element.style.color = 'red';
+            element.style.margin = '10px';
+        }
+    </script>
+</body>
+</html>
